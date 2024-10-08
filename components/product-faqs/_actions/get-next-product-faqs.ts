@@ -9,10 +9,29 @@ const getNextProductFaqs = async (
   limit: number,
   endCursor?: string | null
 ) => {
-  return {
-    endCursor: null,
-    faqs: [],
-  };
+  
+  function sleep(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+  await sleep(200);
+
+  // throw new Error("Something went wrong");
+
+  const response = await client.fetch({
+    document: MetafieldsQuery,
+    variables: {
+      productId,
+      limit,
+      after: endCursor,
+    },
+  });
+
+  const product = response.data.site.product;
+
+  if (!product?.metafields) {
+    return { endCursor: null, faqs: [] };
+  }
+  return formatFaqsCollection(product);
 };
 
 export default getNextProductFaqs;

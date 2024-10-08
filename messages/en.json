@@ -25,6 +25,10 @@
     "products": "Products"
   },
   "Product": {
+    "FAQ": {
+      "heading": "Frequently Asked Questions",
+      "loadMore": "Load more"
+    },
     "loading": "Loading...",
     "carouselTitle": "Related Products",
     "noGalleryText": "Coming Soon",

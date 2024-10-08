@@ -13,6 +13,7 @@ const config = {
     '@bigcommerce/catalyst/prettier',
   ],
   rules: {
+    
     '@typescript-eslint/naming-convention': 'off',
     '@next/next/no-html-link-for-pages': 'off',
     'import/dynamic-import-chunkname': 'off',
